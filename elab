@@ -1,0 +1,35 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+using namespace std;
+int main()
+{
+    int T;
+    cin >> T;
+    queue<int> q;
+    int M = 0;
+    while (T--)
+    {
+        int n;
+        cin >> n;
+        q.push(n);
+        if (n > M)
+            M = n;
+    }
+    vector<int> dp(M + 1, 0);
+    for (int i = 2; i <= M; i++)
+    {
+        bool canWin = (i >= 2 && !dp[i - 2]) ||
+                      (i >= 3 && !dp[i - 3]) ||
+                      (i >= 5 && !dp[i - 5]);
+        dp[i] = canWin ? 1 : 0;
+    }
+
+    while (!q.empty())
+    {
+        int x = q.front();
+        q.pop();
+        cout << (dp[x] ? "FIRST\n" : "SECOND\n");
+    }
+    return 0;
+}

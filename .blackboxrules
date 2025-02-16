@@ -1,0 +1,3 @@
+SystemTrayIcon.Visible = false;
+SystemTrayIcon.Visible = false;
+Application.Run();

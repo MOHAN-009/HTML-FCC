@@ -1,3 +1,6 @@
 {
-    "CodeGPT.apiKey": "Ollama"
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.blackboxrules": "cpp"
+    }
 }
